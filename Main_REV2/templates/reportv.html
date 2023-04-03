@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>{% block title %} NSCT {% endblock title %}</title>
+
+
+    <link rel='stylesheet' href="static/bootstrap.css" type='text/css' >
+    <link rel='stylesheet' href="static/custom.css" type='text/css' >
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark main_header">
+            <div class="collapse navbar-collapse" id="navcol-5">
+            <span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
+               <a  href="homepage"> <img src="http://192.168.0.165:5000/static/23.png" width="28" height="30" ></a></span>
+        </nav>
+
+
+        <!------------ End header ------------>
+
+        <!------------ Main ------------>
+         {% block content %}
+        <h1 style="background: #092325 ;color: var(--bs-white);font-size: 23px;padding: 20px 10px 10px 16px;"><div class="container">Submit Your Cybersecurity Concerns Now!</div></h1>
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-left">
+
+                <div class="col-12">
+                    <form method="POST" enctype="multipart/form-data" class="p-3 p-xl-4" action="/report/">
+
+
+                        <div class="split_input">
+                            <label class="form-label" for="fname">First Name : </label>
+                            <div class="mb-3"><input type="text" class="form-control" id="fname" name="fname" placeholder="First name"></div>
+                        </div>
+
+
+                        <div class="split_input">
+                            <label class="form-label" for="lname">Last Name :</label>
+                            <div class="mb-3"><input type="text" class="form-control" id="lname" name="lname" placeholder="Last name"></div>
+                       </div>
+
+
+                        <div class="split_input">
+                            <label class="form-label" for="email">Email Adress :</label>
+                            <div class="mb-3"><input type="email" class="form-control" id="email" name="email" placeholder="e.g. sam.parkinson@gmail.com"></div>
+                        </div>
+
+
+                       <div class="split_input">
+                            <label class="form-label" for="vweb"> Domain link:</label>
+                            <div class="mb-3"><input type="url" class="form-control" id="vweb" name="vweb" placeholder="website link, e.g. https://www.odoo.com" required></div>
+                       </div>
+
+
+                       <div class="split_input">
+                            <label class="form-label" for="dtg">Data & Time:&nbsp;</label>
+                            <div class="mb-3"><input type="datetime-local" class="form-control" id="dtg" name="dtg" required></div>
+                        </div>
+
+
+                       <div class="split_input">
+                            <label class="form-label" for="dtg">Age:&nbsp;</label>
+                            <div class="mb-3"><input type="datetime-local" class="form-control" id="dtg" name="age" required></div>
+                       </div>
+
+
+                       <div class="split_input">
+                            <label class="form-label" for="fname">Username : </label>
+                            <div class="mb-3"><input type="text" class="form-control" id="uname" name="uname" placeholder="sam1995"></div>
+                       </div>
+
+
+                       <div class="full_input">
+                            <label class="form-label" for="vdesc">Description of Security vulnerability:</label>
+                            <div class="mb-3"><textarea class="form-control" id="vdesc" name="vd" rows="6" placeholder="Security vulnerability concern." required></textarea></div>
+                       </div>
+
+
+                       <div class="full_input">
+                            <label class="form-label" for="pfix">Suggestions:</label>
+                            <div class="mb-3"><input type="text" class="form-control" id="pfix" name="vs" placeholder="suggested fixes."></div>
+                       </div>
+
+
+                       <div class="full_input"><button class="btn btn-primary d-block w-15" style="width:150pt" type="submit">Submit</button></div>
+
+                    </form>
+                </div>
+
+
+
+        <div class="col-12">
+
+                  <form class="p-3 p-xl-4" action="/report/" method="POST">
+
+                      <div class="full_input">
+                          <p><b>Would like to view/remove recorded personal data? Enter your E-mail address below to access our records</b></p>
+                      </div>
+
+                      <div class="full_input email_input_custom">
+                          <label class="form-label" for="email">Email Adress :</label>
+                          <div class="mb-3"><input type="email" class="form-control" id="email" name="email" placeholder="e.g. sam.parkinson@gmail.com">
+                              <a class="btn btn-primary d-block w-20" href="userinfo" style="width:150pt">View my data</a>
+                          </div>
+
+                      </div>
+                  </form>
+
+
+        </div>
+            </div>
+        </div>
+         {% endblock %}
+
+
+        <!------------------------- Footer ---------------->
+        {% block footer %}
+        <footer class="text-center  footer_1">
+
+            <div class="container text-white py-4 py-lg-5 ">
+                <ul class="list-inline">
+                    <li class="list-inline-item me-4"><a class="link-light" href="https://online.essex.ac.uk">UOE</a></li>
+                    <li class="list-inline-item me-4"><a class="link-light" href="https://online.essex.ac.uk">GITHUB</a></li>
+                </ul>
+                <p class="text-muted mb-0" style="font-size: 9pt;color: #fff !important">Copyright © 2023 University of Essex Online MSC Computer Science Project</p>
+            </div>
+
+        </footer>
+        {% endblock  %}
+        <!------------------------- End Footer ---------------->
+
+    </body>
+</html>
