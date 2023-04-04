@@ -32,7 +32,7 @@ text-align: center;
 }
 
 .slider_con{
-background-image:url(http://192.168.0.165:5000/static/1.jpg);
+background-image:url(http://localhost:5000/static/1.jpg);
 height: 400px;
 background-size: cover;
 }
