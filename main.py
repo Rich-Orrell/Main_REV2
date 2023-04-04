@@ -1,11 +1,18 @@
 from flask import Flask, render_template, request, flash
-
 from flask_mysqldb import MySQL
 import mysql.connector
-conn = mysql.connector.connect(host="uoe-cybercrime-app.mysql.database.azure.com", user="ro_admin", passwd="Abc!!!123", database="cybercrime_app")
+
+
+# app.config['MYSQL_HOST'] = "localhost"
+# app.config['MYSQL_USER'] = "root"
+# app.config['MYSQL_PASSWORD'] = "123123"
+# app.config['MYSQL_DB'] = "ncstdb"
+# conn = MySQL(app)
+
+
+# connecting the database
+conn = mysql.connector.connect(host="localhost", user="root", passwd="123123", database="ncstdb")
 db = conn.cursor()
-
-
 
 # Standard practice to create a flask application
 app = Flask(__name__)
